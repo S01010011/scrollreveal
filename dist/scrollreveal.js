@@ -1,3 +1,6 @@
+/*
+  modified funtion _getRevealElements
+*/
 /////    /////    /////    /////
 /////    /////    /////    /////
 /////    /////    /////    /////
@@ -308,7 +311,9 @@
       return [target]
     } else if (sr.tools.isNodeList(target)) {
       return Array.prototype.slice.call(target)
-    }
+    } else if(target instanceof Array) {
+      return target;
+    } // if target just an array
     return []
   }
 
